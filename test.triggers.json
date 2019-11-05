@@ -1,0 +1,11 @@
+[
+  {
+    "schema": "linkmex",
+    "table": "processes"
+  },
+  {
+    "schema": "linkmex",
+    "table": "oauth_access_tokens",
+    "columns": "*"
+  }
+]

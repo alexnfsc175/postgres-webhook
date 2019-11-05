@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  postgres-webhook: 
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    network_mode: host
+    environment:
+      DBNAME: sistema
+      PGUSER: dev
+      PGPASS: 1234
+      PGHOST: localhost
+      PGPORT: 27017
+      WEBHOOKURL: http://localhost:8888/postgres/webhook
+      TIMEZONE: America/Sao_Paulo
+    restart: always
+    container_name: postgres-webhook
