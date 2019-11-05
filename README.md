@@ -77,8 +77,9 @@ DELETE FROM test_table WHERE id = 1;
 
 JSON webhook payload:
 
-````json
-{"data": {"id": 1, "name": "pqr1"}, "table": "test_table", "op": "DELETE"}
+```json
+{ "data": { "id": 1, "name": "pqr1" }, "table": "test_table", "op": "DELETE" }
+```
 
 ## Desinstalando rotinas de notificação
 
@@ -86,7 +87,7 @@ To remove the postgres-webhook related functions and triggers that were added to
 
 ```bash
 psql -h localhost -p 27017 -U dev -d sistema
-````
+```
 
 ```sql
 DO $$DECLARE r record;
