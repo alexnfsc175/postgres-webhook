@@ -1,0 +1,10 @@
+[
+  {
+    "table": "followupprocesso",
+    "columns": "*"
+  },
+  {
+    "table": "processo",
+    "columns": "*"
+  }
+]

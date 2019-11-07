@@ -95,7 +95,7 @@ BEGIN
     FOR r IN SELECT routine_schema, routine_name FROM information_schema.routines
              WHERE routine_name LIKE 'notify_postgres_webhook%'
     LOOP
-        EXECUTE 'DROP FUNCTION ' || quote_ident(r.routine_schema) || '.' || quote_ident(r.routine_name) || ' CASCADE';
+        EXECUTE 'DROP FUNCTION ' || quote_ident(r.routine_schema) || '.' || quote_ident(r.routine_name) || '() CASCADE';
     END LOOP;
 END$$;
 ```
@@ -127,3 +127,5 @@ $ ./build/postgres-webhook 'host=localhost port=5432 dbname=postgres user=postgr
 2. The tests assume that you have a local postgres instance at `localhost:5432` and a database called `postgres_webhook_test` which can be accessed by an `admin` user.
 3. Run postgres-webhook on this database with the webhook url set to `http://localhost:5000`
 4. run `run_tests.sh` script in the `tests` directory.
+
+<!-- https://gist.github.com/colophonemes/9701b906c5be572a40a84b08f4d2fa4e -->
