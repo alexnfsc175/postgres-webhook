@@ -6,12 +6,12 @@ services:
       dockerfile: Dockerfile
     network_mode: host
     environment:
-      DBNAME: sistema
-      PGUSER: dev
-      PGPASS: 1234
-      PGHOST: localhost
-      PGPORT: 27017
-      WEBHOOKURL: http://localhost:8888/postgres/webhook
-      TIMEZONE: America/Sao_Paulo
+      DBNAME: ${DBNAME}
+      PGUSER: ${PGUSER}
+      PGPASS: ${PGPASS}
+      PGHOST: ${PGHOST}
+      PGPORT: ${PGPORT}
+      WEBHOOKURL: ${WEBHOOKURL}
+      TIMEZONE: ${TIMEZONE}
     restart: always
     container_name: postgres-webhook
